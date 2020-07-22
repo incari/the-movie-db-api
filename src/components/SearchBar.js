@@ -1,25 +1,27 @@
-import React, { useCallback, useState } from 'react';
-import { getData } from '../services/getData';
+import React, { useState } from 'react';
 
-export const SearchBar = () => {
-  const [props, setProps] = useState();
-  const [genres, setGenres] = useState();
+export const SearchBar = ({ onSubmit }) => {
+  const [keyword, setKeyword] = useState('');
 
-  const handleClick = useCallback(() => {
-    getData().then(res => {
-      setProps(res);
-      setGenres(res.genres[0].name);
-      console.log(res);
-    });
-  }, []);
+  const handleChange = e => {
+    setKeyword(e.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit({ keyword });
+  };
   return (
     <>
-      <section className='main'>
-        <h2 className='main__title'>¿Qué quieres ver hoy?</h2>
-        <input type='text' placeholder='Buscar...' />
-
-        <button onClick={handleClick}>serch</button>
-      </section>
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder='Search a movie here...'
+          onChange={handleChange}
+          type='text'
+          value={keyword}
+        />
+        <button>Search</button>
+      </form>
     </>
   );
 };

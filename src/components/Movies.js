@@ -9,15 +9,15 @@ const movieDefault = {
 };
 
 export const Movies = props => {
-  const { backdrop_path, title, genres, runtime, vote_average } = props;
+  const { backdrop_path, title, overview, vote_average } = props;
   const img_source = `${BASE_IMG}${backdrop_path}`;
   return (
     <>
       <img className='movie-item__img' src={img_source} alt='' />
-      <p className='carousel-item__details--title'>{title} </p>
-      <p className='carousel-item__details--subtitle'>
-        {genres} | {runtime} min | {vote_average}
+      <p className='carousel-item__details--title'>
+        {title} | {vote_average}
       </p>
+      <p className='carousel-item__details--subtitle'>{overview}</p>
     </>
   );
 };
