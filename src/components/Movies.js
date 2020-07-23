@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Col } from 'react-bootstrap';
 import './Movies.css';
 
 import { ModalDetails } from './ModalDetails';
@@ -9,7 +7,7 @@ import IMG from '../images/no_image.png';
 const BASE_IMG = 'https://image.tmdb.org/t/p/w500';
 
 export const Movies = props => {
-  const { backdrop_path, title, overview, vote_average, id } = props;
+  const { backdrop_path, title, vote_average, id } = props;
   const img_source = backdrop_path ? `${BASE_IMG}${backdrop_path}` : IMG;
 
   const [details, setDetails] = useState('test');

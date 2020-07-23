@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Modal } from 'react-bootstrap';
 import './ModalDetails.css';
 const BASE_IMG = 'https://image.tmdb.org/t/p/w500';
