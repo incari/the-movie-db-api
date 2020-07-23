@@ -1,26 +1,25 @@
-.main {
+.searchbar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 300px;
-  border-radius: 0px 0px 40px 40px;
+  height: 150px;
 }
 
-.main__title {
+.searchbar-title {
   color: #6fb6d6;
   font-size: 25px;
 }
 
-.main .isHome {
+.searchbar .isHome {
   width: 70%;
 }
 
-.input {
+.searchbar-input {
   width: 300px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid #6fb6d6;
-  border-radius: 25px;
+  border-radius: 25px 0 0 25px;
   color: #6fb6d6;
   font-family: 'Muli', sans-serif;
   font-size: 16px;
@@ -35,7 +34,13 @@
   background-position: 5px 12.5px;
   background-size: 25px;
 }
-
-::placeholder {
-  color: #6fb6d6;
+.searchbar-button {
+  background-color: #6fb6d6;
+  color: white;
+  width: 100px;
+  font-weight: bold;
+  border: 0px;
+  height: 50px;
+  border-radius: 0px 25px 25px 0px;
+  font-size: 16px;
 }

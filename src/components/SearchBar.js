@@ -14,16 +14,18 @@ export const SearchBar = ({ onSubmit }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit} className='main'>
-        <h2 className='main__title'>¿Qué quieres ver hoy?</h2>
-        <input
-          className='input'
-          placeholder='Search a movie here...'
-          onChange={handleChange}
-          type='text'
-          value={keyword}
-        />
-        <button>Search</button>
+      <form onSubmit={handleSubmit} className='searchbar' role='search'>
+        <h2 className='searchbar-title'>¿Qué quieres ver hoy?</h2>
+        <div className='searchbar-child'>
+          <input
+            className='searchbar-input'
+            placeholder='Search a movie here...'
+            onChange={handleChange}
+            type='text'
+            value={keyword}
+          />
+          <button className='searchbar-button'>Search</button>
+        </div>
       </form>
     </>
   );
