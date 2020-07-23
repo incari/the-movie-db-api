@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  border-radius: 0px 0px 40px 40px;
+}
+
+.main__title {
+  color: #6fb6d6;
+  font-size: 25px;
+}
+
+.main .isHome {
+  width: 70%;
+}
+
+.input {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #6fb6d6;
+  border-radius: 25px;
+  color: #6fb6d6;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 30px;
+  background-image: url(https://img.icons8.com/pastel-glyph/2x/search--v2.png);
+  scroll-padding: 7px 20px;
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-position: 5px 12.5px;
+  background-size: 25px;
+}
+
+::placeholder {
+  color: #6fb6d6;
+}

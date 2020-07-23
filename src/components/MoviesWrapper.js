@@ -1,10 +1,12 @@
-import React, { useCallback, useState } from 'react';
-import { Movies } from './Movies';
+import React from 'react';
+import './MoviesWrapper.css';
 
 export const MoviesWrapper = ({ children }) => {
   return (
     <>
-      <section className='movies-wrapper'>{children}</section>
+      <section className='movies'>
+        <div className='movies__container'>{children}</div>
+      </section>
     </>
   );
 };

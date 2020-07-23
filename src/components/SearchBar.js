@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchBar.css';
 
 export const SearchBar = ({ onSubmit }) => {
   const [keyword, setKeyword] = useState('');
@@ -13,8 +14,10 @@ export const SearchBar = ({ onSubmit }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='main'>
+        <h2 className='main__title'>¿Qué quieres ver hoy?</h2>
         <input
+          className='input'
           placeholder='Search a movie here...'
           onChange={handleChange}
           type='text'

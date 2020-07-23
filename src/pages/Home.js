@@ -25,6 +25,7 @@ export const Home = () => {
   const [movieList, setMovieList] = useState(initialState);
 
   const handleSubitForm = ({ keyword }) => {
+    console.log('key', keyword);
     const url =
       'https://api.themoviedb.org/3/search/movie?api_key=56ee74fd8cde9ed20ae0f8f19ae002ac&query=';
     fetch(url + keyword)

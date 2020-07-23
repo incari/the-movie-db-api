@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.aertec-color {
+  color: rgb(7, 73, 117);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

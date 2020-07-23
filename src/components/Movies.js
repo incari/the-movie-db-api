@@ -1,23 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Movies.css';
+import { ModalDetails } from './ModalDetails';
+import IMG from '../images/no_image.png';
+
 const BASE_IMG = 'https://image.tmdb.org/t/p/w500';
-const movieDefault = {
-  img: 'https://zoomf7.files.wordpress.com/2019/08/fight-club-1.jpg',
-  title: 'Fight Club',
-  rating: '8.4',
-  year: '1999',
-  duration: '139'
-};
 
 export const Movies = props => {
-  const { backdrop_path, title, overview, vote_average } = props;
-  const img_source = `${BASE_IMG}${backdrop_path}`;
+  const { backdrop_path, title, overview, vote_average, id } = props;
+  const img_source = backdrop_path ? `${BASE_IMG}${backdrop_path}` : IMG;
+
+  const handleClick = () => {
+    console.log(id);
+  };
+
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <>
-      <img className='movie-item__img' src={img_source} alt='' />
-      <p className='carousel-item__details--title'>
-        {title} | {vote_average}
-      </p>
-      <p className='carousel-item__details--subtitle'>{overview}</p>
+      <div className='movies-item' onClick={() => setModalShow(true)}>
+        <img className='movies-item__img' src={img_source} alt='' />
+        <div className='movies-item__details'>
+          <p className='movies-item__details--title'>
+            {title} | {vote_average}
+          </p>
+          <p className='movies-item__details--subtitle'>{overview}</p>
+        </div>
+      </div>
+      <ModalDetails show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 };
